@@ -1,0 +1,30 @@
+//permutation ke perfec bolbo jodi index diye array er vvalue vag na jai. that's why swap.
+/*/ A perfect permutation is such permutation p that for any i (1 ≤ i ≤ n) (n is the permutation size) the following equations hold ppi = i and pi ≠ i. Nickolas asks you to print any perfect permutation of size n for the given n.*/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define op() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+const int mx=5e3+123;
+int a[mx];
+int main()
+{
+   op();
+  int n;
+  cin>>n;
+  vector<int>v(n+1);
+  for(int i=1; i<=n; i++)
+  {
+    v[i]=i;
+  }
+  if(n%2==0){
+  for(int i=1; i<n; i+=2){
+      swap(v[i],v[i+1]);
+      //cout<<v[i]<<v[i+1];
+  }
+ for(int i=1; i<=n; i++)
+ {
+  cout<<v[i]<<" ";
+ }
+}
+else cout<<"-1"<<endl;
+}
